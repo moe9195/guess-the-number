@@ -3,8 +3,6 @@ import './App.css';
 import HighScoreModal from './HighScoreModal.js'
 import Store from './Store.js'
 
-
-
 // Easy difficulty could be done in 4 or less steps
 // Hard difficulty could be done in 7 or less steps
 // Insane difficulty could be done in 20 or less steps
