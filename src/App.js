@@ -15,6 +15,8 @@ function formatTime(ms) {
   return Math.round(ms/1000)
 }
 
+const upgradeCosts = [100, 200]
+
 class App extends Component { 
 
   constructor(props) {
@@ -51,25 +53,25 @@ class App extends Component {
 
   buyHelperBar() {
     let points = this.state.storePoints;
-      if (points < 1000){
+      if (points < upgradeCosts[0]){
         alert("Not enough gems!")
     }
-      else if (!this.state.upgrades.helperBar && points >= 1000){
+      else if (!this.state.upgrades.helperBar && points >= upgradeCosts[0]){
         let upgrades = this.state.upgrades
         upgrades.helperBar = true
-        this.setState({upgrades: upgrades, storePoints: points-1000})
+        this.setState({upgrades: upgrades, storePoints: points-upgradeCosts[0]})
     }
   }
 
   buyEvenOdd() {
     let points = this.state.storePoints;
-      if (points < 5000){
+      if (points < upgradeCosts[1]){
         alert("Not enough gems!")
     }
-      else if (!this.state.upgrades.evenOdd && points >= 5000){
+      else if (!this.state.upgrades.evenOdd && points >= upgradeCosts[1]){
         let upgrades = this.state.upgrades
         upgrades.evenOdd = true
-        this.setState({upgrades: upgrades, storePoints: points-5000})
+        this.setState({upgrades: upgrades, storePoints: points-upgradeCosts[1]})
     }
   }
 
@@ -205,7 +207,7 @@ class App extends Component {
       </tr>
       );
 
-    let helperBar = <img src={process.env.PUBLIC_URL + this.getHelperImage()} alt="helper" />
+    let helperBar = <img src={"https://raw.githubusercontent.com/moe9195/guess-the-number/master/public/" + this.getHelperImage()} alt="helper" />
     let evenOdd = <h4 style={{color:'white'}} >{this.getEvenOdd()}</h4>
 
     return (

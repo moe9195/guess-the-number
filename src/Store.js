@@ -4,6 +4,8 @@ import Modal from 'react-bootstrap/Modal'
 import { faGem } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+const upgradeCosts = [100, 200]
+
 function Store(props) {
     const [show, setShow] = React.useState(false);
 
@@ -21,7 +23,7 @@ function Store(props) {
         Colorbar <br/> <font size="1">display approximate location of number</font> 
         </div>
         <div className="col-sm">
-            <button className = "btn btn-outline-dark btn " onClick={() => props.buyHelperBar()}>{upgrades.helperBar == true ? "Bought": <h6><FontAwesomeIcon icon={faGem}/><h6>1000</h6></h6>}</button>
+            <button className = "btn btn-outline-dark btn " onClick={() => props.buyHelperBar()}>{upgrades.helperBar == true ? "Bought": <h6><FontAwesomeIcon icon={faGem}/><h6>{upgradeCosts[0]}</h6></h6>}</button>
         </div></div>
 
     let evenOrOddUpgrade = <div className="row">
@@ -29,7 +31,7 @@ function Store(props) {
         Even or Odd <br/> <font size="1">tells you if number is even or odd</font> 
         </div>
         <div className="col-sm">
-            <button className = "btn btn-outline-dark btn " onClick={() => props.buyEvenOdd()}>{upgrades.evenOdd == true ? "Bought": <h6><FontAwesomeIcon icon={faGem}/><h6>5000</h6></h6>}</button>
+            <button className = "btn btn-outline-dark btn " onClick={() => props.buyEvenOdd()}>{upgrades.evenOdd == true ? "Bought": <h6><FontAwesomeIcon icon={faGem}/><h6>{upgradeCosts[1]}</h6></h6>}</button>
         </div></div>
 
     let AwesomeSurprise = <div className="row">
@@ -37,7 +39,7 @@ function Store(props) {
         Awesome Surprise <br/> <font size="1">click for an awesome surprise!</font> 
         </div>
         <div className="col-sm">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className = "btn btn-outline-dark btn"><FontAwesomeIcon icon={faGem}/><h6>9999</h6></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className = "btn btn-outline-dark btn"><FontAwesomeIcon icon={faGem}/><h6>999</h6></a>
         </div></div>
         
 
